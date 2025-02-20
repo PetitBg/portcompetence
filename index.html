@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portefeuille de Compétences</title>
+    <style>
+        :root {
+            --concevoir: #4A90E2;
+            --entreprendre: #50E3C2;
+            --communiquer: #F5A623;
+            --transversal: #9013FE;
+            --background-light: #F9F9F9;
+            --background-dark: #333;
+            --text-light: #FFF;
+            --text-dark: #333;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 2rem;
+            background-color: var(--background-light);
+            color: var(--text-dark);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--background-dark);
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            padding: 0.5rem;
+            border-radius: 8px;
+            display: inline-block;
+        }
+
+        .competence-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 10rem;
+            margin-bottom: 3rem;
+        }
+
+        .competence-card {
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            position: relative;
+            background-color: var(--text-light);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .competence-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+        }
+
+        /* Couleurs par compétence */
+        .concevoir { border-left: 5px solid var(--concevoir); }
+        .entreprendre { border-left: 5px solid var(--entreprendre); }
+        .communiquer { border-left: 5px solid var(--communiquer); }
+        .transversal { border-left: 5px solid var(--transversal); }
+
+        h3 {
+            margin-top: 0;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .auto-eval {
+            position: absolute;
+            bottom: 1rem;
+            right: 1rem;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        .niveau-1 { background-color: #FF6B6B; color: white; }
+        .niveau-2 { background-color: #FFD93D; color: #333; }
+        .niveau-3 { background-color: #6BFF97; color: #333; }
+
+        .ue-content {
+            margin-top: 1rem;
+        }
+
+        .ue-content p {
+            margin: 0.5rem 0;
+            line-height: 1.5;
+        }
+
+        .ue-content strong {
+            display: block;
+            margin-top: 1rem;
+            color: #666;
+        }
+
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+        }
+
+        .legend-color.concevoir { background-color: var(--concevoir); }
+        .legend-color.entreprendre { background-color: var(--entreprendre); }
+        .legend-color.communiquer { background-color: var(--communiquer); }
+        .legend-color.transversal { background-color: var(--transversal); }
+
+        .legend-eval {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .legend-eval span {
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        .legend-1 { background-color: #FF6B6B; color: white; }
+        .legend-2 { background-color: #FFD93D; color: #333; }
+        .legend-3 { background-color: #6BFF97; color: #333; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Portefeuille de Compétences - Master 1 Design d'Interfaces</h1>
+
+        <!-- Légende -->
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-color concevoir"></div>
+                <span>Concevoir</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color entreprendre"></div>
+                <span>Entreprendre</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color communiquer"></div>
+                <span>Communiquer</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color transversal"></div>
+                <span>Compétences Transversales</span>
+            </div>
+        </div>
+
+        <!-- Concevoir -->
+        <h2 style="color: var(--concevoir); background-color: rgba(74, 144, 226, 0.1);">🎨 Concevoir</h2>
+        <div class="competence-grid">
+            <div class="competence-card concevoir">
+                <h3>Ergonomie et Recherche Utilisateur</h3>
+                <div class="ue-content">
+                    <p><strong>Lister, nommer :</strong> Interviews utilisateurs, études de terrain, tests UX</p>
+                    <p><strong>Organiser/catégoriser :</strong> Méthodes qualitatives et quantitatives, caractéristiques des utilisateurs</p>
+                    <p><strong>Définir/décrire :</strong> Comprendre les besoins de certains individus à pratiquer un sport en particulier, connaître leurs motivations et leurs buts</p>
+                    <p><strong>Exemple :</strong> "Dans le cadre du projet 'FIL ROUGE', j'ai mené des interviews et des études de terrain pour savoir pourquoi les utilisateurs aiment jouer au basket grâce à des interviews sous forme d'audios et de prises de notes."</p>
+                </div>
+                <div class="auto-eval niveau-3">Niveau 3</div>
+            </div>
+
+            <div class="competence-card concevoir">
+                <h3>Analyse de Design d'Interface</h3>
+                <div class="ue-content">
+                    <p><strong>Lister, nommer :</strong> Audit design, analyse d'interaction, accessibilité de l'interface</p>
+                    <p><strong>Organiser/catégoriser :</strong> Évaluation heuristique, tests utilisateurs, test de la typographie et des couleurs, utilisation de logiciels de test d'accessibilité</p>
+                    <p><strong>Définir/décrire :</strong> Évaluer la composition visuelle et l'ergonomie d'une interface</p>
+                    <p><strong>Exemple :</strong> "Dans le cadre d'un audit design, j'ai réalisé un audit sur le site web de l'université Sorbonne Paris Nord pour les tests liés à son accessibilité pour les personnes en situation de handicap visuel grâce à des logiciels comme 'Color Contrast Analyser' et 'WACAG', et j'ai proposé des axes d'amélioration pour ce site."</p>
+                </div>
+                <div class="auto-eval niveau-2">Niveau 2</div>
+            </div>
+        </div>
+
+        <!-- Entreprendre -->
+        <h2 style="color: var(--entreprendre); background-color: rgba(80, 227, 194, 0.1);">🚀 Entreprendre</h2>
+        <div class="competence-grid">
+            <div class="competence-card entreprendre">
+                <h3>Management des Projets</h3>
+                <div class="ue-content">
+                    <p><strong>Lister, nommer :</strong> Gestion de tâches, leadership, coordination, collaboration, organisation</p>
+                    <p><strong>Organiser/catégoriser :</strong> Méthodes agiles, outils de gestion (Monday.com), gestion de projet, outil de listes des tâches</p>
+                    <p><strong>Définir/décrire :</strong> Planifier, coordonner des projets en équipe, définir et distribuer les tâches</p>
+                    <p><strong>Exemple :</strong> "Dans le cadre d'un projet, j'ai dirigé une équipe pour valoriser Monday.com en attribuant les tâches et en concevant la présentation."</p>
+                </div>
+                <div class="auto-eval niveau-3">Niveau 3</div>
+            </div>
+
+            <div class="competence-card entreprendre">
+                <h3>Écoconception</h3>
+                <div class="ue-content">
+                    <p><strong>Lister, nommer :</strong> Optimisation énergétique, choix techniques responsables, limiter les déchets numériques, éco-responsable</p>
+                    <p><strong>Organiser/catégoriser :</strong> Analyse du cycle de vie, éco-design</p>
+                    <p><strong>Définir/décrire :</strong> Minimiser l'impact environnemental des solutions numériques</p>
+                    <p><strong>Exemple :</strong> "Dans le cadre d'un projet web, j'ai appliqué des principes d'écoconception pour réduire la consommation énergétique grâce à des outils comme 'GreenIT' qui permet de mesurer l'indice d'éco-conception de la page. J'ai également participé à la création d'un service éco-conçu."</p>
+                </div>
+                <div class="auto-eval niveau-2">Niveau 2</div>
+            </div>
+        </div>
+
+        <!-- Communiquer -->
+        <h2 style="color: var(--communiquer); background-color: rgba(245, 166, 35, 0.1);">🗣️ Communiquer</h2>
+        <div class="competence-grid">
+            <div class="competence-card communiquer">
+                <h3>Prise de Parole</h3>
+                <div class="ue-content">
+                    <p><strong>Lister, nommer :</strong> Présentation orale, conception de supports visuels</p>
+                    <p><strong>Organiser/catégoriser :</strong> Storytelling, outils de présentation (Canva)</p>
+                    <p><strong>Définir/décrire :</strong> Présenter un projet de manière claire et convaincante</p>
+                    <p><strong>Exemple :</strong> "Dans le cadre d'un exposé sur Monday.com, j'ai conçu la présentation sur Canva et guidé l'équipe pour une présentation orale réussie."</p>
+                </div>
+                <div class="auto-eval niveau-2">Niveau 2</div>
+            </div>
+
+            <div class="competence-card communiquer">
+                <h3>Collaboration</h3>
+                <div class="ue-content">
+                    <p><strong>Lister, nommer :</strong> Travail d'équipe, communication, résolution de conflits</p>
+                    <p><strong>Organiser/catégoriser :</strong> Méthodes collaboratives, outils (Slack, Trello)</p>
+                    <p><strong>Définir/décrire :</strong> Travailler efficacement en équipe pour atteindre un objectif commun</p>
+                    <p><strong>Exemple :</strong> "Dans le cadre du hackathon IA, j'ai collaboré avec mon équipe pour créer un site vitrine en utilisant des outils IA comme ChatGPT et l'IA de Figma pour générer des maquettes. J'ai bien expliqué mon travail lors de la présentation et j'ai fait en sorte que les tuteurs puissent comprendre ma démarche et ma vision."</p>
+                </div>
+                <div class="auto-eval niveau-2">Niveau 2</div>
+            </div>
+        </div>
+
+        <!-- Compétences Transversales -->
+        <h2 style="color: var(--transversal); background-color: rgba(144, 19, 254, 0.1);">🤖 Compétences Transversales</h2>
+        <div class="competence-grid">
+            <div class="competence-card transversal">
+                <h3>Hackathon IA</h3>
+                <div class="ue-content">
+                    <p><strong>Lister, nommer :</strong> Prompt engineering, intégration IA, génération d'images</p>
+                    <p><strong>Organiser/catégoriser :</strong> Outils IA (ChatGPT, Figma IA)</p>
+                    <p><strong>Définir/décrire :</strong> Explorer l'IA pour la génération d'images et l'automatisation de tâches</p>
+                    <p><strong>Exemple :</strong> "Dans le cadre du hackathon, j'ai utilisé ChatGPT et Figma IA pour créer un site vitrine de A à Z."</p>
+                </div>
+                <div class="auto-eval niveau-2">Niveau 2</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Légende autoévaluation -->
+    <h2 style="text-align: center; margin-top: 3rem;">Légende autoévaluation</h2>
+    <div class="legend-eval">
+        <span class="legend-1">Rouge (1) : Pas mon domaine</span>
+        <span class="legend-2">Jaune (2) : Je sais comment faire</span>
+        <span class="legend-3">Vert (3) : Je sais faire</span>
+    </div>
+</body>
+</html>
